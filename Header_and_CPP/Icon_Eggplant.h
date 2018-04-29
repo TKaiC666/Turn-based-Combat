@@ -1,0 +1,82 @@
+#pragma once
+#include"Icons.h"
+
+class Icon_Eggplant : public Icons
+{
+public:
+	void Initialize()
+	{
+
+		string pic_temp[8] = {
+			"                    ",
+			"                    ",
+			"      ¢k    ¢o      ",
+			"      ¢k    ¢o      ",
+			"                    ",
+			"        ¢¨¢©        ",
+			"        ¢ª¢«        ",
+			"                    "
+
+		};
+
+		unsigned short temp_bg[8][10] =
+
+		{
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_YELLOW ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_YELLOW ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA },
+			{ BG_MAGENTA,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA ,BG_MAGENTA }
+			
+		};
+
+		unsigned short background_color_temp[8][20];
+
+
+		unsigned short temp_color[8][10] =
+		{
+			{ WORD_BLACK ,WORD_MAGENTA ,WORD_MAGENTA ,WORD_MAGENTA ,WORD_BLACK ,WORD_BLACK ,WORD_BLACK ,WORD_BLACK ,WORD_BLACK ,WORD_BLACK },
+			{ WORD_MAGENTA ,WORD_MAGENTA ,WORD_LIGHTGREY ,WORD_MAGENTA ,WORD_MAGENTA ,WORD_MAGENTA ,WORD_MAGENTA ,WORD_MAGENTA ,WORD_BLACK ,WORD_BLACK },
+			{ WORD_BLACK ,WORD_BLACK ,WORD_LIGHTGREY ,WORD_MAGENTA ,WORD_BLACK ,WORD_RED ,WORD_YELLOW ,WORD_MAGENTA ,WORD_BLACK ,WORD_BLACK },
+			{ WORD_BLACK ,WORD_BLACK ,WORD_BLACK ,WORD_MAGENTA ,WORD_BROWN ,WORD_BROWN ,WORD_YELLOW ,WORD_LIGHTBLUE ,WORD_BLACK ,WORD_BLACK },
+			{ WORD_BLACK ,WORD_LIGHTBLUE ,WORD_BLACK ,WORD_MAGENTA ,WORD_YELLOW ,WORD_BROWN ,WORD_YELLOW ,WORD_BLACK ,WORD_LIGHTBLUE ,WORD_BLACK },
+
+			{ WORD_LIGHTGREY ,WORD_BLACK ,WORD_BLACK ,WORD_LIGHTBLUE ,WORD_YELLOW ,WORD_YELLOW ,WORD_YELLOW ,WORD_LIGHTGREEN ,WORD_BLACK ,WORD_BLACK },
+			{ WORD_LIGHTGREY ,WORD_BLACK ,WORD_BLACK ,WORD_YELLOW ,WORD_YELLOW ,WORD_YELLOW ,WORD_YELLOW ,WORD_BLACK ,WORD_BLACK ,WORD_BLACK },
+			{ WORD_LIGHTGREY ,WORD_LIGHTGREY ,WORD_LIGHTGREY ,WORD_LIGHTGREY ,WORD_LIGHTBLUE ,WORD_LIGHTBLUE ,WORD_LIGHTGREY ,WORD_BLACK ,WORD_BLACK ,WORD_BLACK }
+		};
+
+
+		unsigned short word_color_temp[8][20];
+
+
+
+		for (int i = 0; i < 8; i++)
+		{
+			for (int j = 0; j < 20; j++)
+			{
+				background_color_temp[i][j] = temp_bg[i][j / 2];
+				word_color_temp[i][j] = temp_color[i][j / 2];
+			}
+		}
+
+		for (int i = 0; i < 8; i++)
+		{
+			pic[i] = pic_temp[i];
+			for (int j = 0; j < 20; j++)
+			{
+				background_color[i][j] = background_color_temp[i][j];
+				word_color[i][j] = word_color_temp[i][j];
+			}
+
+		}
+	}
+	Icon_Eggplant()
+	{
+		Initialize();
+	}
+
+};
